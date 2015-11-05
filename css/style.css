@@ -358,6 +358,62 @@ section.breaking {
 	text-shadow: 2px 3px 0 rgba(125,116,107,.75);
 }
 
+/* Добавление стиля к слову ДРУГОЙ */
+.other-text {
+	font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+} 
+/* Добавление отступа к МЕНЮ */
+.header_unstick .mgtop25{
+	margin-top: -25px;
+}
+.header_stick .mgtop25{
+	margin-top: 0px;
+}
+
+/* Настройка полей ввода на окне для отзывов */
+.modal-header h4{
+	text-align: center;
+}
+.form-group textarea:focus{
+      border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.form-group textarea {
+    display: block;
+    width: 49%;
+    height: 150px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid darkgrey;
+    border-radius: 0px;
+    resize:none;
+}
+.form-control { 
+    display: block;
+    width: 49%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid darkgrey;
+    border-radius: 0px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.send_rewiev {
+	margin-right: 190px;
+}
 
 
 /* -- */
@@ -2450,6 +2506,7 @@ ul.how-it-works-col li:last-child:hover {
 .feature-title {
 	margin-top: 17px;
 	margin-bottom: 15px;
+	color:#19A9E5;
 }
 
 /* 7.1 Feature Icon on Hero Form Layout */
