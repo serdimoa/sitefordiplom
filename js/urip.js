@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	var $input =$('#hero-date').pickadate();
+	var picker = $input.pickadate('picker');
 	/* =========================
 	   ScrollReveal
 	   (on scroll fade animations)
@@ -42,7 +44,7 @@ $(document).ready(function(){
 	    filter: ':not(.external)'
 	});
 
-	$('#hero-date').pickadate();
+
 	/* ===============
 	   Dropdown Menu
 	==================*/
@@ -398,7 +400,7 @@ $(document).ready(function(){
 
         // Stop form submission & check the validation
         e.preventDefault();
-
+				console.log(picker.get());
         // Variable declaration
         var error = false;
         var fname = $('#hero-fname').val();
@@ -474,10 +476,81 @@ $(document).ready(function(){
 });
 $("#texttofitt").fitText(0.52);
 
-$('#hero-lname').selectize({
+var $herolname=$('#hero-lname').selectize({
 dropdownParent: 'body'
 });
 
-$('#heroType').selectize({
+var $heroType = $('#heroType').selectize({
 dropdownParent: 'body'
 });
+
+
+function prepareMessage () {
+ // Prevent the form from submitting as it normally would (only if onSubmit)
+ event.preventDefault();
+// Get variables from local data (if obtaining from form etc…)
+var fName = $("#hero-fname").val();
+ var lName = $("#hero-email").val();
+ var name = "Тема:"+fName+ "<br>Почта:" +lName+"<br>Вид работы:"+$herolname.text()+"<br>Предмет:"+$heroType.text()+"<br>Срок сдачи:" ;
+ var email = $("#hero-email").val();
+ var msg = $("#Form_Message").val();
+// Store contents of HTML email (for injecting variables from above, not necessary)
+ var htmlClient = "<html>"+name+"<\/html";
+ // File Input Validation (as seen above)
+ if( $("#hero-file").val() != ""){
+ var file = $("#hero-file")[0].files[0];
+ var reader = new FileReader();
+ reader.onload = function(event) {
+ var fileResult = btoa(event.target.result);
+ sendTheMessage(name, email, fileType, fileName, fileResult, htmlClient);
+ }
+ reader.readAsBinaryString(file);
+ var fileType = file.type;
+ var fileName = file.name;
+ }
+ }
+ // Create a separate function for the AJAX request (nessecary for the FileReader to complete task before trying to send)
+ function sendTheMessage (name, email, fileType, fileName, fileResult, htmlClient) {
+ event.preventDefault();
+ $.ajax(
+ {
+ type: "POST",
+ url: "https://mandrillapp.com/api/1.0/messages/send.json",
+ data: {
+ "key": "CN6eykY5JNkIwZ6_lg5Eaw",
+ "message": {
+ "from_email": "serdimoa@gmail.com",
+ "from_name": "serdimoa@gmail.com",
+ "headers": {
+ "Reply-To": "serdimoa@gmail.com"
+ },
+ "subject": "Example Subject",
+ "html": htmlClient,
+// Automatically generates a plain text version of the email
+ "auto_text": true,
+ "to": [
+ {
+ "email": "serdimoa@gmail.com",
+ "name": "Example Recipient",
+ "type": "to"
+ }],
+// Variables as defined in fileReader actions
+"attachments": [
+ {
+ "type": fileType,
+ "name": fileName,
+ "content": fileResult
+ }
+ ],
+ }
+ }
+ })
+// If message sends successfully these commands will be executed
+.done(function(response) {
+alert( "We have sent your message!" );
+ })
+// If message fails to send these commands will be executed
+.fail(function(response) {
+alert( "We were unable to send the message." );
+});
+}

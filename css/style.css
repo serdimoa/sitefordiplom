@@ -1623,7 +1623,7 @@ header {
 /* 3.1 Menu Toggle */
 a.menu-toggle {
 	color: #fff;
-	font-size: 18px;
+	font-size: 1.4em;
 }
 
 a.menu-toggle:hover {
@@ -1634,7 +1634,7 @@ a.menu-toggle:hover {
 a.menu-toggle span {
 	padding-left: 10px;
 	vertical-align: text-top;
-	font-size: 19px;
+	font-size: 1.2em;
 }
 /* -- */
 
