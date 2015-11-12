@@ -84,7 +84,7 @@ html{
  */
 body {
 	background: #fff;
-	color: #777;
+	color: #050505;
 	font-size: 16px;
 	font-family: "Comfortaa", sans-serif;
 
@@ -146,7 +146,7 @@ select:focus {
 /* 1.1 Typography */
 p {
 	margin-bottom: 25px;
-	font-size: 16px;
+	font-size: 18px;
 	font-family: "Comfortaa", sans-serif;
 	line-height: 24px;
 }
@@ -413,6 +413,22 @@ section.breaking {
 }
 .send_rewiev {
 	margin-right: 190px;
+}
+/*Изменение шрифта с 16 на 18 на главной странице */
+.fs18 li {
+	font-size: 18px;
+}
+/*Настройка стиля для блоков оплаты */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 
@@ -2541,7 +2557,7 @@ ul.how-it-works-col li:last-child:hover {
 
 .the-feature a p {
 	margin-bottom: 0;
-	color: #777;
+	color: #050505;
 }
 
 .the-feature:hover .feature-icon {
