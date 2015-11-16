@@ -45,30 +45,12 @@
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
 	<!-- FAV AND TOUCH ICONS -->
-	<link rel="shortcut icon" href="images/favicon/favicon.ico">
-
-	<link rel="icon" type="image/png" href="images/favicon/favicon-32.png">
-
-	<!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicon/apple-touch-icon-152.png">
-
-	<!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicon/apple-touch-icon-144.png">
-
-	<!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon/apple-touch-icon-114.png">
-
-	<!-- For iPad and iPad mini models with a 1× display -->
-	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/favicon/apple-touch-icon-76.png">
-
-	<!-- For first- and second-generation iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicon/apple-touch-icon-72.png">
-
-	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	<link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-57.png">
+	<link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD8CiYACgr8APz7+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREREREREREREREREREREREREREREREREREREREREREREREREREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+	<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD8CiYACgr8APz7+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREREREREREREREREREREREREREREREREREREREREREREREREREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
 
 
-	</head>
+
+</head>
 
   	<body class="single">
 
@@ -284,10 +266,12 @@
 									<form id="footer-subscribe" class="the-subscribe-form">
 
 										<div class="input-group">
-											<input type="tel" class="form-control" placeholder="Напишите Ваш телефон">
+											<input id="phones" type="tel" class="form-control" placeholder="Напишите Ваш телефон">
 											<span class="input-group-btn">
-												<button class="btn btn-subscribe all-caps" type="submit">Заказать</button>
+												<button onclick="CallME()" class="btn btn-subscribe all-caps" type="submit">Заказать
+												</button>
 											</span>
+
 										</div> <!--/ .input-group -->
 
 									</form> <!--/ #footer-subscribe -->

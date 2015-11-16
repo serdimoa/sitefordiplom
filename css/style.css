@@ -1652,6 +1652,13 @@ a.menu-toggle span {
 	vertical-align: text-top;
 	font-size: 1.2em;
 }
+a.menu-toggle{
+	margin-top: -35px;
+}
+.header-stick a.menu-toggle{
+	margin-top: initial !important;
+}
+
 /* -- */
 
 /* 3.2 Navigation */
@@ -3551,4 +3558,8 @@ ul.language-selection {
 #main-footer.footer-vimeo-hovered .copyright .language:before,
 #main-footer.footer-vimeo-hovered .copyright .language a {
 	color: #fff;
+}
+
+.the-feature a:hover {
+	cursor: default;
 }
